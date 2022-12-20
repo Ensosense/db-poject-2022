@@ -3,8 +3,8 @@ use iths;
 drop table if exists UNF;
 
 
-create table UNF(
-	`Id` DECIMAL(38, 0) NOT NULL,
+CREATE TABLE `UNF` (
+    `Id` DECIMAL(38, 0) NOT NULL,
     `Name` VARCHAR(26) NOT NULL,
     `Grade` VARCHAR(11) NOT NULL,
     `Hobbies` VARCHAR(25),
