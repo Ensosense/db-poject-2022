@@ -24,6 +24,8 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
+
+
 drop table if exists Student;
 
 create table Student (
@@ -35,3 +37,14 @@ create table Student (
 
 insert into Student (StudentId, FirstName, LastName) select distinct Id, substring_index(Name, ' ', 1), substring_index(Name, ' ', -1) from UNF;
 
+
+
+drop table if exists School;
+
+create table School select distinct 0 as SchoolId, School as Name, City from UNF;
+
+set @id = 0;
+
+update School set SchoolId = (select @id := @id + 1);
+
+alter table School add primary key(SchoolId);
