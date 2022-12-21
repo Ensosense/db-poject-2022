@@ -3,9 +3,9 @@
 ```mermaid
 erDiagram
 
-    Student {
-        int StudentId
-        varchar FirstName
-	varchar LastName§
-    }
+Student {
+int StudentId
+varchar FirstName
+varchar LastName
+}
 ```
