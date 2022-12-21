@@ -58,10 +58,6 @@ alter table StudentSchool modify column StudentId int;
 alter table StudentSchool modify column SchoolId int;
 alter table StudentSchool add primary key(StudentId, SchoolId);
 
-SELECT StudentId, FirstName, LastName, Name, City FROM Student
-JOIN StudentSchool USING (StudentId)
-JOIN School USING (SchoolId);
-
 
 drop table if exists Phone;
 
