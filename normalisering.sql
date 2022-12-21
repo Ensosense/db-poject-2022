@@ -57,3 +57,46 @@ create table StudentSchool select distinct UNF.Id as StudentId, School.SchoolId 
 alter table StudentSchool modify column StudentId int;
 alter table StudentSchool modify column SchoolId int;
 alter table StudentSchool add primary key(StudentId, SchoolId);
+
+SELECT StudentId, FirstName, LastName, Name, City FROM Student
+JOIN StudentSchool USING (StudentId)
+JOIN School USING (SchoolId);
+
+
+drop table if exists Phone;
+
+CREATE TABLE Phone (
+    PhoneId INT NOT NULL AUTO_INCREMENT,
+    StudentId INT NOT NULL,
+    Type VARCHAR(32),
+    Number VARCHAR(32) NOT NULL,
+    CONSTRAINT PRIMARY KEY(PhoneId)
+);
+
+INSERT INTO Phone(StudentId, Type, Number)
+SELECT ID As StudentId, "Home" AS Type, HomePhone as Number FROM UNF
+WHERE HomePhone IS NOT NULL AND HomePhone != ''
+UNION SELECT ID As StudentId, "Job" AS Type, JobPhone as Number FROM UNF
+WHERE JobPhone IS NOT NULL AND JobPhone != ''
+UNION SELECT ID As StudentId, "Mobile" AS Type, MobilePhone1 as Number FROM UNF
+WHERE MobilePhone1 IS NOT NULL AND MobilePhone1 != ''
+UNION SELECT ID As StudentId, "Mobile" AS Type, MobilePhone2 as Number FROM UNF
+WHERE MobilePhone2 IS NOT NULL AND MobilePhone2 != ''
+;	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
