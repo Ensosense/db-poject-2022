@@ -22,4 +22,12 @@ StudentSchool {
 int StudentId
 int SchoolId
 }
+
+Phone {
+int PhoneId
+int StudentId
+varchar Type
+varchar Number
+}
+
 ```
