@@ -23,11 +23,16 @@ int StudentId
 int SchoolId
 }
 
+Phone || --o{ PhoneList : allows
 Phone {
 int PhoneId
 int StudentId
 varchar Type
 varchar Number
+}
+PhoneList {
+int StudentId
+varchar Numbers
 }
 
 ```
