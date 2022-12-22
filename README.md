@@ -24,6 +24,7 @@ int SchoolId
 }
 
 Phone || --o{ PhoneList : allows
+Phone || --o{ Student : allows
 Phone {
 int PhoneId
 int StudentId
