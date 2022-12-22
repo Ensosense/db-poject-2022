@@ -4,7 +4,7 @@
 erDiagram
 
 
-Student ||--o{ StudentSchool : allows
+Student ||--o{ StudentSchool : is
 Student {
   int StudentId
   varchar FirstName
@@ -33,6 +33,19 @@ varchar Number
 PhoneList {
 int StudentId
 varchar Numbers
+}
+
+
+Hobbies || --o{ StudentHobbie : allows
+Hobbies {
+int HobbieId
+varchar Type
+}
+StudentHobbie || --o{ Student : allows
+StudentHobbie {
+int HobbieId
+int StudentId
+varchar Hobbie
 }
 
 ```
