@@ -81,7 +81,7 @@ WHERE MobilePhone2 IS NOT NULL AND MobilePhone2 != ''
 ;	
 
 
-
+create view PhoneList select StudentId, group_concat(Number) as Numbers from Phone group by StudentId;  
 
 
 
